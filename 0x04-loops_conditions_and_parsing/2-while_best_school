@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Bash script to repeatedly display "Best School" 10 times.
+# Utilizes a while loop with a counter variable 'count' incrementing from 1 to 10.
+# Each iteration prints "Best School" and increments the counter.
+# The loop terminates after 10 iterations.
+
+count=1
+
+while [ $count -le 10 ]
+do
+    echo "Best School"
+    count=$((count+1))
+done

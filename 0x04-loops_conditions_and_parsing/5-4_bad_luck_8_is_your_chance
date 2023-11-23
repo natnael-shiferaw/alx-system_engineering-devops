@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This is a Bash script that prints "bad luck" on the 4th iteration, "good luck" on the 8th iteration, and "Best School" for other iterations.
+# Employs a while loop with conditional checks using if-elif-else statements based on the value of the counter variable 'n'.
+# The script increments 'n' in each iteration, displaying the corresponding message for the current iteration.
+n=1
+
+while [ $n -le 10 ]
+do
+    if [ $n -eq 4 ]
+    then
+        echo "bad luck"
+    elif [ $n -eq 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    n=$(( n + 1 ))
+done

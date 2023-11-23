@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displaying the username, user id, and user home directory path from the /etc/passwd file.
+
+# Read each line from /etc/passwd.
+# Split each line using the colon (:) delimiter.
+# Print the first, third, and sixth fields.
+
+while read -r passwd; do
+  echo "$passwd" | cut -d ':' -f1,3,6
+done < "/etc/passwd"

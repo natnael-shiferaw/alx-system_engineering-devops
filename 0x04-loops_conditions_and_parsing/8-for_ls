@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This is a Bash script used to display the content of the current directory in a specific format.
+# Utilizes the "ls" command to list files, and then iterates through each file using a "for" loop.
+# Within the loop, the "find" and "cut" commands extract and display relevant information from the file names.
+for file in $list
+do
+    find "$file" | cut -d- -f2
+done

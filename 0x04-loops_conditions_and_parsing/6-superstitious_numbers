@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This is Bash script used for printing messages based on the iteration count.
+# Utilizes a while loop with if-then and case statements to display messages for the 4th, 9th, and 17th iterations.
+# For other iterations, it echoes the value of 'n'.
+# The loop increments 'n' in each iteration and continues until 'n' reaches 20.
+n=1
+
+while [ $n -le 20 ]
+do
+    echo $n
+    case $n in
+        4)
+            echo "bad luck from China"
+            ;;
+        9)
+            echo "bad luck from Japan"
+            ;;
+        17)
+            echo "bad luck from Italy"
+            ;;
+        *)
+            ;;
+    esac
+    n=$(( n + 1 ))
+done

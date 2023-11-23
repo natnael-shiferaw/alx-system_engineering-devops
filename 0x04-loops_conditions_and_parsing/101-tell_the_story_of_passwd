@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This Bash Script narrates a tale derived from the details found in the `/etc/passwd` file.
+
+# Parses through the /etc/passwd file, unveiling intriguing details.
+
+while IFS=':' read -r username password uid gid info home shell; do
+  echo "The user $username is part of the $gid gang,"\
+  "lives in $home and rides $shell."\
+  "$uid's place is protected by the passcode $password,"\
+  "more info about the user here: $info"
+done < "/etc/passwd"

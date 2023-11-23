@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Bash script using the 'until' loop to repeatedly display "Best School" 10 times.
+# The loop iterates until the counter variable 'count' exceeds 10, echoing the message and incrementing the counter in each iteration.
+
+count=1
+until [ $count -gt 10 ]
+do
+    echo "Best School"
+    count=$((count+1))
+done
