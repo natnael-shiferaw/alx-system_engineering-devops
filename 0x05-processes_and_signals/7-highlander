@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This Bash Script repeatedly prints "To infinity and beyond" with a 2-second pause between each iteration.
+# Displays "I am invincible!!!" between iterations.
+# Utilizes a while loop with a trap for the SIGTERM signal to showcase the invincibility message.
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap 'echo "I am invincible!!!"' SIGTERM
+done

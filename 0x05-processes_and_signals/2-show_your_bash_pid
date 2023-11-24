@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This Bash Script is used to display lines containing the word 'bash' in the output of the 'ps' command.
+# Uses 'grep' to filter and show processes that match the specified criteria.
+# Shellcheck is disabled for SC2009 to suppress warnings about using 'ps' with 'aux'.
+ps -aux | grep bash

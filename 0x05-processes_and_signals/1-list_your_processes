@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This is a Bash script used to display a list of currently running processes.
+# Shows all processes, including those for all users and those without a TTY.
+# Uses the 'ps' command with the options '-auxf' to retrieve and present detailed process information.
+ps -auxf

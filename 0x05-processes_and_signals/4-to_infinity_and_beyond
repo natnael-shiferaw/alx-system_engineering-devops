@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This is a Bash Script used to repeatedly print "To infinity and beyond" with a 2-second pause between each iteration.
+# Utilizes a while loop with the condition 'true' to execute the echo and sleep commands indefinitely.
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

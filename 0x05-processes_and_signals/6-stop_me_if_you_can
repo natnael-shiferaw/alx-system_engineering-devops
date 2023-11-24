@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This Bash Script terminates the process running the script '4-to_infinity_and_beyond'.
+# Uses 'pkill' with the '-f' option to match the process by its full command line.
+
+pkill -f 4-to_infinity_and_beyond

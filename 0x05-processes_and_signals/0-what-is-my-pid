@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This is a Bash script that prints the Process ID (PID) of the current script.
+# Utilizes the special variable "$$" to obtain and display the PID.
+echo "The PID of this script is $$"

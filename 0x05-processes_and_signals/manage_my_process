@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This Bash Script repeatedly appends "I am alive!" to the file /tmp/my_process with a 2-second pause between each message.
+# Utilizes a while loop to continuously write to the file.
+
+while true
+do
+  echo "I am alive!" >> /tmp/my_process
+  sleep 2
+done
