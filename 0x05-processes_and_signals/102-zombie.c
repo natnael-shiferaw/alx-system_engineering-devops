@@ -36,14 +36,14 @@ while (zombie_count < 5)
 {
 Pid = fork();
 
-    if (Pid > 0)
-	{
-		printf("Zombie process created, PID: %d\n", Pid);
-		sleep(1);
-		zombie_count++;
-	}
-	else
-		exit(0);
+if (Pid > 0)
+{
+	printf("Zombie process created, PID: %d\n", Pid);
+	sleep(1);
+	zombie_count++;
+}
+else
+	exit(0);
 }
 
 infinite_while();
