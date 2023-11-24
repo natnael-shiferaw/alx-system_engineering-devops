@@ -34,9 +34,9 @@ int main(void)
 
 	while (zombie_count < 5)
 	{
-		Pid = fork();
+	Pid = fork();
 
-        if (Pid > 0)
+    	if (Pid > 0)
 		{
 			printf("Zombie process created, PID: %d\n", Pid);
 			sleep(1);
