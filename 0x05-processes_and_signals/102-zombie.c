@@ -29,24 +29,24 @@ int infinite_while(void)
 
 int main(void)
 {
-	char zombie_count = 0;
-	pid_t Pid;
+char zombie_count = 0;
+pid_t Pid;
 
-	while (zombie_count < 5)
+while (zombie_count < 5)
+{
+Pid = fork();
+
+    if (Pid > 0)
 	{
-	Pid = fork();
-
-    	if (Pid > 0)
-		{
-			printf("Zombie process created, PID: %d\n", Pid);
-			sleep(1);
-			zombie_count++;
-		}
-		else
-			exit(0);
+		printf("Zombie process created, PID: %d\n", Pid);
+		sleep(1);
+		zombie_count++;
 	}
+	else
+		exit(0);
+}
 
-	infinite_while();
+infinite_while();
 
-	return (EXIT_SUCCESS);
+return (EXIT_SUCCESS);
 }
