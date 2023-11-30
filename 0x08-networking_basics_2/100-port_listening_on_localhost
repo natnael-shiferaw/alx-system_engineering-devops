@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This Bash Script is used to listen on port 98 on localhost using the nc (netcat) command.
+# When executed, this script waits for a connection on port 98, displaying any received data on the console.
+# To test, connect to the port using another terminal window: `nc -l localhost 98`.
+
+nc -l localhost 98
