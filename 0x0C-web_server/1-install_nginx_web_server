@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# A Bash Script that configures a new ubuntu machine by installing Nginx
+# It should be listening on port 80
+# It serves a page that returns a Hello World string
+sudo apt-get  update -y
+sudo apt-get install nginx -y
+
+# allow nginx on firewall
+ufw allow 'Nginx HTTP'
+
+# Creates new index
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+# Starts nginx
+sudo service nginx start
