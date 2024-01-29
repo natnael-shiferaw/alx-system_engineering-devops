@@ -1,0 +1,11 @@
+# Configures an Ubuntu machine with nginx
+# Defines paths for nginx configuration and error file
+# Sets up redirection, error pages, and custom header in nginx config
+
+# Installs and starts nginx, adds custom header, and restarts nginx service
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo sed -i "/http {/a\         add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx restart
