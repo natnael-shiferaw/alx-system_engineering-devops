@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Configures an Ubuntu machine with nginx
 # Defines paths for nginx configuration and error file
 # Sets up redirection, error pages, and custom header in nginx config
