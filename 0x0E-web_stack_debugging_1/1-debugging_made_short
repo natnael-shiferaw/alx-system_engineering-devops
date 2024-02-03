@@ -3,4 +3,3 @@
 service nginx start
 curl 0:80
 service nginx status | grep "nginx is not running"
-
