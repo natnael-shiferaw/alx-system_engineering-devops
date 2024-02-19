@@ -66,7 +66,6 @@ def export_to_json(data, filename="todo_all_employees.json"):
     try:
         with open(filename, "w") as jsonfile:
             json.dump(data, jsonfile, indent=4)
-        print(f"Data exported to {filename} successfully.")
 
     except IOError as e:
         print(f"Error exporting data: {e}")
