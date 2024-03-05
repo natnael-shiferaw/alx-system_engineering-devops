@@ -19,7 +19,7 @@ def number_of_subscribers(subreddit):
         int: The number of subscribers if the subreddit is valid, 0 otherwise.
     """
     # Construct the URL for the subreddit's about page
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    url = f'http://www.reddit.com/r/{subreddit}/about.json'
 
     # Set a custom User-Agent header to avoid rate limiting
     headers = {'User-Agent': 'Custom Reddit Subscribers Checker'}
@@ -33,7 +33,7 @@ def number_of_subscribers(subreddit):
         data = response.json()
 
         # Extract and return the number of subscribers
-        return data.get('data', {}).get('subscribers', 0)
+        return data.get('data').get('subscribers')
     else:
         # If the subreddit is invalid or the request fails, return 0
         return 0
