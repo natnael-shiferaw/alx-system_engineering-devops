@@ -22,7 +22,7 @@ def number_of_subscribers(subreddit):
     url = f'http://www.reddit.com/r/{subreddit}/about.json'
 
     # Set a custom User-Agent header to avoid rate limiting
-    headers = {'User-Agent': 'Custom Reddit Subscribers Checker'}
+    headers = {'User-Agent': 'My User Agent 1.0'}
 
     # Send a GET request to the Reddit API
     response = requests.get(url, headers=headers)
