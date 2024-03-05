@@ -8,6 +8,7 @@ for a given subreddit.
 
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=None, count=0):
     """
     Recursively queries the Reddit API and returns a list
@@ -36,8 +37,9 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
 
     try:
         # Send a GET request to the Reddit API
-        response = requests.get(url, headers=headers, params=params, allow_redirects=False)
-        
+        response = requests.get(url, headers=headers, params=params,
+                                allow_redirects=False)
+
         # Check if the subreddit is invalid
         if response.status_code == 404:
             return None
@@ -50,11 +52,11 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
 
         # Increment the total count of articles
         count += data.get("dist")
-        
+
         # Extract titles of hot articles and append them to the list
         for child in data.get("children"):
             hot_list.append(child.get("data").get("title"))
-        
+
         # If there are more pages, recursively call the function
         if after is not None:
             return recurse(subreddit, hot_list, after, count)
@@ -64,15 +66,3 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
     except Exception as e:
         # If an exception occurs, return None
         return None
-
-if __name__ == "__main__":
-    import sys
-    
-    if len(sys.argv) < 2:
-        print("Please pass an argument for the subreddit to search.")
-    else:
-        result = recurse(sys.argv[1])
-        if result is not None:
-            print(len(result))
-        else:
-            print("None")
