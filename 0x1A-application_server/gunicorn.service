@@ -1,0 +1,23 @@
+[Unit]
+# Description of the unit
+Description=Gunicorn application server running AirBnB_clone_v4
+# Ensure that Gunicorn starts after network services
+After=network.target
+
+[Service]
+# Run the service as the ubuntu user
+User=ubuntu
+# Set the working directory for the service
+WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
+# Command to start Gunicorn with specified options
+ExecStart=gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log
+# Always restart the service if it stops
+Restart=always
+# Redirect standard error to a file
+StandardError=append:/tmp/airbnb-error.log
+# Set identifier for syslog messages
+SyslogIdentifier=gunicorn
+
+[Install]
+# Specify the target where the unit should be installed
+WantedBy=multi-user.target
